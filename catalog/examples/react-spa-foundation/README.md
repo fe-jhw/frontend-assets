@@ -1,6 +1,6 @@
 # React SPA Foundation Example
 
-URL 목록 상태, local pagination, query/API 경계, 인증 refresh, form draft, error boundary를 하나의 작은 package에서 타입체크하고 테스트한다. publish용 library나 starter가 아니라 필요한 module과 test를 함께 읽고 선별 채택하는 reference다.
+URL 목록 상태, local pagination, query/API 경계, 인증 refresh, form draft, error boundary를 하나의 작은 package에서 타입체크하고 테스트하는 reference다.
 
 ## 기준 버전
 
@@ -35,3 +35,9 @@ npm run test:browser
 3. 필요한 폴더와 가까운 `*.test.*`를 함께 참고한다.
 4. alias, endpoint, schema, error copy, UI component를 대상 프로젝트에 맞춘다.
 5. browser storage token store는 인증 architecture가 명시적으로 허용할 때만 사용한다.
+
+## 채택 단위
+
+필요한 module과 가까운 test를 한 단위로 보고 소비 프로젝트의 기존 구조, UI와 제품 계약에 맞게 이식한다. generic UI markup은 상태 전이와 접근성 연결을 실행하는 데 사용한다.
+
+여러 module을 함께 채택할 때는 [프로젝트 진입 체크리스트](../../checklists/project-entry.md)의 workflow별 조립 순서와 대상 프로젝트의 기존 owner를 우선한다.

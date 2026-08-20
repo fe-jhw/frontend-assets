@@ -2,7 +2,7 @@
 
 ## 저장소 성격
 
-이 저장소는 starter, framework, scaffolder가 아니라 검증된 프론트엔드 자산을 축적하는 카탈로그다. 소비 프로젝트는 여기의 폴더 구조를 복제하지 않고 필요한 판단 기준, module, test 또는 설정 일부를 가져간다.
+이 저장소는 검증된 프론트엔드 자산을 축적하는 카탈로그다. 소비 프로젝트는 기존 구조와 책임 경계에 필요한 판단 기준, module, test 또는 설정 일부를 가져간다.
 
 ## 세 계층
 
@@ -15,19 +15,19 @@
 - `examples/`: 실제 compiler와 test로 검증하는 코드 예제
 - `scripts/`: 특정 agent 없이 실행할 수 있는 deterministic 진단
 
-내용을 수정할 때는 먼저 catalog를 고친다. agent adapter에 같은 규칙을 복사하지 않는다.
+내용을 수정할 때는 canonical catalog를 먼저 고치고 agent adapter는 해당 자산을 연결한다.
 
 ### Adapter
 
 `adapters/<tool>/`은 특정 coding agent가 catalog를 언제 읽고 어떻게 적용할지 설명한다. 현재는 Codex adapter만 있다.
 
 - adapter는 trigger, resource routing, tool 전용 metadata를 소유한다.
-- frontend 패턴의 상세 계약과 코드 예제는 소유하지 않는다.
-- 다른 agent를 도입하면 catalog를 복제하지 않고 해당 형식의 얇은 adapter만 추가한다.
+- frontend 패턴의 상세 계약과 코드 예제는 catalog가 소유한다.
+- 다른 agent를 도입하면 같은 catalog를 가리키는 해당 형식의 얇은 adapter를 추가한다.
 
 ### Repository harness
 
-루트 `AGENTS.md`, `scripts/check-repository.sh`, CI는 이 저장소 자체를 유지하기 위한 장치다. 소비 프로젝트로 가져갈 자산이 아니다.
+루트 `AGENTS.md`, `scripts/check-repository.sh`, CI는 이 저장소 자체를 유지하는 repository harness다.
 
 ## 자산 추가 기준
 
@@ -36,7 +36,7 @@
 3. prose보다 코드나 script로 고정해야 하는 상태 전이가 있는가?
 4. 대상 프로젝트가 선택할 여지를 남기면서도 판단이 달라질 비자명한 내용을 담는가?
 
-기준을 통과하지 못하면 먼저 제품 코드에 둔다. 새 자산은 instruction보다 pattern/reference로 시작하고, 반복되는 여러 단계 workflow가 확인됐을 때만 agent skill로 승격한다.
+기준이 확인되기 전에는 제품 코드가 해당 구현을 소유한다. 새 자산은 pattern/reference로 시작하고, 반복되는 여러 단계 workflow가 확인되면 agent skill로 승격한다.
 
 ## 자산 형식 선택
 
@@ -46,7 +46,7 @@
 | Pattern·checklist | 특정 문제에서 읽는 판단표, 불변식, acceptance criteria             | 호출 순서와 도구 조작을 복제한 본문    |
 | Agent workflow    | 하나의 사용자 의도로 반복되는 여러 단계의 조사·구현                | 상시 태도, 일반 제품 사용법, 단일 규칙 |
 | Script            | syntax, structure, 변환, 산출물 분석처럼 결정적인 검사             | 의미와 설계 품질의 최종 판단           |
-| Example           | compiler와 test로 보호할 상태 전이                                 | 통째로 복사하는 starter 구조           |
+| Example           | compiler와 test로 보호할 상태 전이                                 | 제품 구조를 암묵적으로 정하는 예제     |
 
 agent workflow를 추가하기 전에 다음 순서로 확인한다.
 
@@ -55,7 +55,7 @@ agent workflow를 추가하기 전에 다음 순서로 확인한다.
 3. 항상 적용되는 규칙이면 프로젝트 지침으로, 결정적인 검사면 script로 충분하지 않은가?
 4. 둘 이상의 실제 작업에서 같은 여러 단계가 반복됐는가?
 
-하나라도 더 단순한 소유자가 있으면 workflow를 만들지 않는다. 한 규칙은 한 canonical 자산만 소유하고 adapter는 그 위치를 가리킨다.
+가장 단순한 소유자를 선택하고 한 규칙은 한 canonical 자산에 둔다. adapter는 그 위치를 가리킨다.
 
 ## 의도적으로 제외하는 내용
 

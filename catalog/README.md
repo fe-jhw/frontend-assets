@@ -17,6 +17,7 @@
 
 ## Checklists
 
+- [프로젝트 진입과 자산 채택](checklists/project-entry.md)
 - [Frontend code review](checklists/frontend-code-review.md)
 - [Verification 위험도](checklists/verification-risk-levels.md)
 

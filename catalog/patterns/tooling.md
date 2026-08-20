@@ -9,7 +9,7 @@
 
 ## Prettier
 
-스타일 값보다 팀이 하나의 formatter를 사용하고 CI에서 `prettier --check .`를 실행하는 것이 중요하다. 예제 preset은 no-semicolon, double quote, width 100을 사용하지만 기존 프로젝트 스타일을 덮어쓰는 근거는 아니다.
+스타일 값보다 팀이 하나의 formatter를 사용하고 CI에서 `prettier --check .`를 실행하는 것이 중요하다. 기존 프로젝트 스타일을 우선하며 예제 preset은 no-semicolon, double quote, width 100 조합을 보여준다.
 
 ## TypeScript
 

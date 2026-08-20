@@ -16,7 +16,7 @@ description: "React TypeScript 프로젝트의 ESLint flat config, Prettier, str
 
 ## Reference code
 
-[`react-spa-foundation`](../../../../catalog/examples/react-spa-foundation)의 config는 조합 예시일 뿐 preset이 아니다. 필요한 파일만 비교하고 기존 style 값과 project-specific exception을 덮어쓰지 않는다.
+[`react-spa-foundation`](../../../../catalog/examples/react-spa-foundation)의 config는 조합 예시다. 기존 style 값과 project-specific exception을 기준으로 필요한 파일만 비교한다.
 
 ## Invariants
 

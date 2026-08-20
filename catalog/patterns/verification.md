@@ -34,10 +34,12 @@
 ## 폼
 
 - empty, valid, field error, root server error
+- pristine과 field error 사이 helper/error slot, grid row와 action 위치 유지
 - pending 중 중복 제출 차단
 - 실패 뒤 draft 보존
 - 동일 entity refetch와 다른 entity 전환
 - route/internal transition/beforeunload dirty guard
+- custom discard prompt의 accessible name, initial focus, Tab containment, Escape와 focus 복원
 
 ## 브라우저
 

@@ -1,6 +1,6 @@
 # Compatibility
 
-이 표는 지원 범위가 아니라 현재 reference package를 2026-08-20에 검증한 기준이다. 새 major가 나왔다는 이유만으로 자동 업그레이드하지 않는다.
+이 표는 현재 reference package를 2026-08-20에 검증한 version snapshot이다. major upgrade는 대상 프로젝트의 결정과 재검증을 거쳐 반영한다.
 
 | 영역 | 검증 기준 |
 | --- | --- |

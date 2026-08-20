@@ -1,6 +1,6 @@
 # Frontend Assets
 
-React SPA에서 반복해서 참고할 패턴, 체크리스트, 검증 가능한 코드 예제와 agent adapter를 모아두는 카탈로그다. 이 저장소를 통째로 복사해 새 프로젝트를 시작하는 starter kit이 아니며, 대상 프로젝트의 기술 버전과 기존 책임 경계를 확인한 뒤 필요한 자산만 선별한다.
+React SPA에서 반복해서 참고할 패턴, 체크리스트, 검증 가능한 코드 예제와 agent adapter를 모아두는 카탈로그다. 대상 프로젝트의 기술 버전과 기존 책임 경계를 확인한 뒤 필요한 자산만 선별해 사용한다.
 
 ## 구조
 
@@ -10,10 +10,11 @@ React SPA에서 반복해서 참고할 패턴, 체크리스트, 검증 가능한
 | [`adapters/`](adapters/README.md) | Codex 등 각 agent가 catalog를 발견하고 적용하도록 돕는 얇은 adapter |
 | [`docs/`](docs/ARCHITECTURE.md) | 저장소 구조, 소유권과 채택 방법 |
 
-도구 중립 지식과 실행 코드는 `catalog/`가 소유한다. `SKILL.md`, `AGENTS.md`, tool metadata 같은 형식은 canonical 내용을 복제하지 않고 catalog로 라우팅한다.
+도구 중립 지식과 실행 코드는 `catalog/`가 소유하고, `SKILL.md`, `AGENTS.md`, tool metadata 같은 형식은 해당 canonical 자산으로 라우팅한다.
 
 ## 시작 위치
 
+- 새 프로젝트·기존 프로젝트 진입 점검: [catalog/checklists/project-entry.md](catalog/checklists/project-entry.md)
 - 카탈로그 탐색: [catalog/README.md](catalog/README.md)
 - URL 상태와 로컬 상태 선택: [catalog/patterns/list-state-selection.md](catalog/patterns/list-state-selection.md)
 - 자산 사용 방법: [docs/USING-THE-CATALOG.md](docs/USING-THE-CATALOG.md)

@@ -23,4 +23,4 @@ description: "React와 TanStack Query 기반 코드에서 query key, runtime res
 - `unknown` 응답은 UI에 도달하기 전에 runtime parse한다.
 - navigation, toast와 form close는 API adapter가 아니라 feature가 결정한다.
 - mutation 실패 시 draft나 기존 화면 상태를 임의로 지우지 않는다.
-- 기존 프로젝트 경계로 충분하면 새 공용 wrapper를 만들지 않는다.
+- 기존 프로젝트 경계를 기본 owner로 사용하고 새 공유 계약이 확인될 때 공용 wrapper를 추가한다.

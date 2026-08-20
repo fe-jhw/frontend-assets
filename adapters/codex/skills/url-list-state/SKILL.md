@@ -16,7 +16,7 @@ URL이 목록 탐색 상태의 단일 source가 되도록 구현한다. 이 스�
 
 ## Reference code
 
-필요한 부분만 [`src/url-list-state`](../../../../catalog/examples/react-spa-foundation/src/url-list-state)와 [`src/pagination`](../../../../catalog/examples/react-spa-foundation/src/pagination)에서 인접 테스트와 함께 참고한다. reference package 전체를 복사하지 않는다.
+[`src/url-list-state`](../../../../catalog/examples/react-spa-foundation/src/url-list-state)와 [`src/pagination`](../../../../catalog/examples/react-spa-foundation/src/pagination)에서 현재 작업에 필요한 module과 인접 테스트를 한 단위로 참고한다.
 
 ## Invariants
 

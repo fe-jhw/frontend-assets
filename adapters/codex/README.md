@@ -28,3 +28,5 @@
 저장소와 adapter 경로가 이미 frontend 범위를 제공하므로 skill name에는 `frontend-` 접두사를 반복하지 않는다. React 범위와 제외 조건은 각 description에서 구분한다.
 
 이 저장소는 수집용이므로 `skills/`를 자동 발견 위치인 `.agents/skills`로 노출하지 않는다. 실제 프로젝트에서 필요할 때만 해당 workflow를 project-local skill로 구성하거나, 이 adapter를 참고해 그 프로젝트의 경로와 검증 명령에 맞게 작성한다.
+
+project-local skill로 옮길 때는 `SKILL.md` 파일만 복사하지 않는다. description과 workflow는 유지하되, 연결된 catalog pattern·reference test를 대상 프로젝트에서 접근 가능한 경로로 다시 연결하고 그 프로젝트의 package version과 검증 명령을 적는다. 세부 채택 경계는 [공통 adapter 계약](../README.md#adapter-채택-계약)을 따른다.

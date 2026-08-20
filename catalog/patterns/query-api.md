@@ -1,6 +1,8 @@
 # Query와 API 경계
 
-## 권장 분리
+## 책임 분리
+
+아래 파일명은 책임을 설명하는 예시다. 기존 프로젝트에 같은 경계가 이미 있으면 파일을 일대일로 만들거나 폴더 구조를 복제하지 않는다.
 
 - `types.ts`: validated domain type과 command type
 - `schemas.ts`: `unknown → domain` runtime parser

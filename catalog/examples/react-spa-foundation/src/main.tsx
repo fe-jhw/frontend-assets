@@ -7,7 +7,6 @@ import { createApiClient } from "@/api-client/api-client"
 import { RootLayout } from "@/app/RootLayout"
 import { createMemoryTokenStore } from "@/auth/token-store"
 import { ResettableErrorBoundary } from "@/error/resettable-error-boundary"
-import { ItemCreateRoute } from "@/features/items/ItemCreateRoute"
 import { ItemsPage } from "@/features/items/ItemsPage"
 
 const apiClient = createApiClient({
@@ -19,9 +18,20 @@ const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
     element: <RootLayout />,
+    hydrateFallbackElement: <p role="status">Loading page…</p>,
     children: [
       { path: "/", element: <ItemsPage client={apiClient} /> },
-      { path: "/items/new", element: <ItemCreateRoute client={apiClient} /> }
+      {
+        path: "/items/new",
+        lazy: async () => {
+          const { ItemCreateRoute } = await import("@/features/items/ItemCreateRoute")
+          return {
+            Component: function ItemCreateRouteElement() {
+              return <ItemCreateRoute client={apiClient} />
+            }
+          }
+        }
+      }
     ]
   }
 ])

@@ -15,8 +15,9 @@ const allowedTypes = [
   "revert",
 ];
 const headerPattern = new RegExp(
-  `^(?:${allowedTypes.join("|")})(?:\\([^()\\r\\n]+\\))?!?: \\S(?:.*\\S)?$`,
+  `^(?:${allowedTypes.join("|")})(?:\\([^()\\s](?:[^()\\r\\n]*[^()\\s])?\\))?!?: \\S(?:.*\\S)?$`,
 );
+const generatedHeaderPatterns = [/^Revert ".+"$/, /^Merge .+$/];
 
 function firstHeader(message) {
   return message
@@ -30,7 +31,10 @@ function validate(message) {
   if (!header) {
     return "commit message가 비어 있습니다.";
   }
-  if (!headerPattern.test(header)) {
+  if (
+    !headerPattern.test(header) &&
+    !generatedHeaderPatterns.some((pattern) => pattern.test(header))
+  ) {
     return `header는 <type>(<scope>): <summary> 형식이어야 합니다. 허용 type: ${allowedTypes.join(", ")}`;
   }
   return null;
@@ -43,8 +47,11 @@ function runSelfTest() {
     ["docs: 카탈로그 사용법 보강", true],
     ["update files", false],
     ["fix(): 빈 scope", false],
+    ["fix( ): 공백 scope", false],
     ["fix(목록):", false],
     ["style(목록): 간격 조정", false],
+    ['Revert "feat(목록): URL 상태 추가"', true],
+    ["Merge branch 'codex/catalog-cleanup'", true],
   ];
 
   const failures = cases.filter(

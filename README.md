@@ -24,6 +24,8 @@ React SPA에서 반복해서 참고할 패턴, 체크리스트, 검증 가능한
 
 ```bash
 bash scripts/check-repository.sh
+npm exec --prefix catalog/examples/react-spa-foundation -- playwright install chromium
+npm run test:browser --prefix catalog/examples/react-spa-foundation
 ```
 
-이 명령은 catalog 예제의 format/type/lint/test/build, Markdown link, adapter 구조와 script syntax를 검사한다. Codex 설치에 포함된 공식 validator가 있으면 `adapters/codex/scripts/check-skills.sh`로 별도 확인할 수 있다.
+첫 명령은 catalog 예제의 format/type/lint/unit test/build, Markdown link와 section anchor, adapter 구조와 script syntax를 검사한다. 뒤의 두 명령은 URL history, dirty transition dialog와 form focus를 Chromium에서 확인한다. CI는 browser 설치와 smoke test까지 모두 실행한다. Codex 설치에 포함된 공식 validator가 있으면 `adapters/codex/scripts/check-skills.sh`로 별도 확인할 수 있다.

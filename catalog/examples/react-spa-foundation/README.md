@@ -4,12 +4,7 @@ URL 목록 상태, local pagination, query/API 경계, 인증 refresh, form draf
 
 ## 기준 버전
 
-- React 19
-- React Router 7
-- TanStack Query 5
-- React Hook Form 7
-- Zod 4
-- Vite 8 / Vitest 4 / ESLint 10 / TypeScript 6
+[호환성 기준](../../COMPATIBILITY.md)을 단일 원본으로 사용한다. 이 package의 lockfile과 CI 결과가 실제 설치 버전의 근거다.
 
 ## 폴더
 
@@ -29,6 +24,8 @@ URL 목록 상태, local pagination, query/API 경계, 인증 refresh, form draf
 ```bash
 npm install
 npm run check
+npx playwright install chromium
+npm run test:browser
 ```
 
 ## 가져갈 때

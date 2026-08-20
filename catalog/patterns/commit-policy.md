@@ -68,4 +68,4 @@ scope는 파일 위치보다 변경을 다시 찾을 때 사용할 제품 영역
 
 ## 선택적 자동 검사
 
-[`check-commit-message.mjs`](../scripts/check-commit-message.mjs)는 header 형식과 type만 dependency 없이 검사한다. commitlint나 기존 hook이 없을 때 선택적으로 연결한다. atomicity, scope 품질과 summary 의미는 script가 대신 판단할 수 없다.
+[`check-commit-message.mjs`](../scripts/check-commit-message.mjs)는 header 형식과 type만 dependency 없이 검사한다. commitlint나 기존 hook이 없을 때 선택적으로 연결한다. Git이 자동 생성한 `Revert "…"`와 `Merge …` header는 일반 revert·merge workflow를 막지 않도록 허용한다. atomicity, scope 품질과 summary 의미는 script가 대신 판단할 수 없다.

@@ -12,6 +12,7 @@
 - [Form draft lifecycle](patterns/form-draft-lifecycle.md)
 - [Error, loading, empty 상태](patterns/ui-states.md)
 - [Tooling baseline](patterns/tooling.md)
+- [Commit policy](patterns/commit-policy.md)
 - [검증 matrix](patterns/verification.md)
 
 ## Checklists
@@ -23,4 +24,5 @@
 
 - [React SPA foundation reference](examples/react-spa-foundation/README.md)
 - [Build asset reporter](scripts/report-build-assets.mjs)
+- [Commit message checker](scripts/check-commit-message.mjs)
 - [호환성 기준](COMPATIBILITY.md)

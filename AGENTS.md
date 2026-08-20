@@ -27,3 +27,11 @@ Codex adapter 자체를 수정했고 공식 skill validator가 현재 설치에 
 ```bash
 bash adapters/codex/scripts/check-skills.sh
 ```
+
+## Commits
+
+- 사용자가 commit을 요청했을 때만 생성하고, push·amend·rebase는 별도 요청 없이 수행하지 않는다.
+- 기본 형식은 `<type>(<scope>): <summary>`이며 type은 `feat`, `fix`, `refactor`, `perf`, `test`, `docs`, `build`, `ci`, `chore`, `revert` 중에서 고른다.
+- scope는 폴더명을 기계적으로 옮기기보다 변경 의도를 찾게 해주는 영역을 쓴다. 이 저장소에서는 `catalog`, `pagination`, `auth`, `draft`, `codex`, `example`, `docs`, `ci` 등을 우선한다.
+- 같은 의도를 증명하는 test와 문서는 구현과 함께 둘 수 있지만, 무관한 refactor·formatting·문서 정리는 별도 commit으로 나눈다.
+- 상세 판단 기준은 `catalog/patterns/commit-policy.md`를 따른다.

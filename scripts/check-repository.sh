@@ -17,6 +17,8 @@ done < <("${mapfile_command[@]}" | sort)
 
 node scripts/check-markdown-links.mjs "${markdown_files[@]}"
 node --check scripts/check-markdown-links.mjs
+node --check catalog/scripts/check-commit-message.mjs
+node catalog/scripts/check-commit-message.mjs --self-test
 node --check catalog/scripts/report-build-assets.mjs
 bash -n adapters/codex/scripts/audit-global-skills.sh
 bash -n adapters/codex/scripts/check-skills.sh

@@ -14,6 +14,7 @@
 - form draft와 reset: [form-draft-lifecycle.md](../catalog/patterns/form-draft-lifecycle.md)
 - loading, error, empty: [ui-states.md](../catalog/patterns/ui-states.md)
 - tooling baseline: [tooling.md](../catalog/patterns/tooling.md)
+- commit 단위와 메시지: [commit-policy.md](../catalog/patterns/commit-policy.md)
 
 문서는 선택 기준과 불변식을 설명한다. 대상 프로젝트의 endpoint, schema, UI component와 사용자 문구는 대상 프로젝트가 소유한다.
 

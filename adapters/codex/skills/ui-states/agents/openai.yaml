@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI States"
+  short_description: "Loading·empty·error·refetch 화면 상태 구현"
+  default_prompt: "Use $ui-states to implement distinct loading, empty, retry, and render-error surfaces."

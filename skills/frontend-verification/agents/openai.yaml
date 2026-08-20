@@ -1,4 +1,0 @@
-interface:
-  display_name: "Frontend Verification"
-  short_description: "변경 위험도에 맞게 코드와 브라우저 동작을 검증"
-  default_prompt: "Use $frontend-verification to verify this frontend change at the appropriate code and runtime depth."

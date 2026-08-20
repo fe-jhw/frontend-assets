@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tooling Baseline"
+  short_description: "ESLint·Prettier·TS·Vite·Vitest 기준 구성"
+  default_prompt: "Use $tooling-baseline to align this project's frontend tooling without replacing its established conventions."

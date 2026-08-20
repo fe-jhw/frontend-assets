@@ -1,0 +1,4 @@
+interface:
+  display_name: "Query API"
+  short_description: "Query key·API adapter·runtime parsing 경계 구현"
+  default_prompt: "Use $query-api to implement a typed query and API boundary with focused cache behavior."

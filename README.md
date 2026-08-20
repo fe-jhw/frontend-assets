@@ -1,35 +1,29 @@
 # Frontend Assets
 
-React SPA 프로젝트에서 반복해서 쓰는 지침, Codex skill, 설정, 실행 가능한 코드 예제를 모은 저장소다. 특정 제품의 폴더명·도메인·API 계약을 그대로 복제하지 않고, 새 프로젝트가 실제로 필요로 하는 자산만 골라 채택한다.
+React SPA에서 반복해서 참고할 패턴, 체크리스트, 검증 가능한 코드 예제와 agent adapter를 모아두는 카탈로그다. 이 저장소를 통째로 복사해 새 프로젝트를 시작하는 starter kit이 아니며, 대상 프로젝트의 기술 버전과 기존 책임 경계를 확인한 뒤 필요한 자산만 선별한다.
+
+## 구조
+
+| 위치 | 역할 |
+| --- | --- |
+| [`catalog/`](catalog/README.md) | 특정 AI 도구에 종속되지 않는 canonical 패턴, 체크리스트, 예제와 script |
+| [`adapters/`](adapters/README.md) | Codex 등 각 agent가 catalog를 발견하고 적용하도록 돕는 얇은 adapter |
+| [`docs/`](docs/ARCHITECTURE.md) | 저장소 구조, 소유권과 채택 방법 |
+
+도구 중립 지식과 실행 코드는 `catalog/`가 소유한다. `SKILL.md`, `AGENTS.md`, tool metadata 같은 형식은 canonical 내용을 복제하지 않고 catalog로 라우팅한다.
 
 ## 시작 위치
 
-- 새 프로젝트 세팅 순서: [docs/NEW-PROJECT-SETUP.md](docs/NEW-PROJECT-SETUP.md)
-- 현재 전역 skill 카탈로그: [docs/GLOBAL-SKILLS.md](docs/GLOBAL-SKILLS.md)
-- 이식·제외·개선 내역: [docs/ASSET-INVENTORY.md](docs/ASSET-INVENTORY.md)
-- 상시 규칙 템플릿: [templates/AGENTS.react-spa.md](templates/AGENTS.react-spa.md)
-- 실행 가능한 예제와 설정: [skills/frontend-feature-patterns/assets/react-spa-foundation](skills/frontend-feature-patterns/assets/react-spa-foundation)
-
-## 저장소가 소유하는 skill
-
-| Skill                       | 사용 시점                                                                      |
-| --------------------------- | ------------------------------------------------------------------------------ |
-| `frontend-feature-patterns` | URL 목록, query/API, 인증, 폼 draft, 오류·로딩 상태를 구현하거나 리팩터링할 때 |
-| `frontend-code-review`      | React 프론트엔드 diff, PR, feature를 결함과 구조 품질 관점에서 리뷰할 때       |
-| `frontend-verification`     | 변경 위험도에 맞는 정적 검사와 브라우저 검증 범위를 고를 때                    |
-| `frontend-bundle-audit`     | production bundle, chunk, size budget을 명시적으로 진단할 때                   |
-| `frontend-skill-review`     | 프로젝트의 AGENTS, references, hooks, Codex skill 품질을 평가하거나 고칠 때    |
-
-skill은 전체 저장소를 project-local 자산으로 연결하거나, 필요한 디렉터리만 대상 프로젝트의 `.agents/skills`에 복사해서 쓴다. 관리형 전역 skill은 이 저장소로 복제하지 않는다.
+- 카탈로그 탐색: [catalog/README.md](catalog/README.md)
+- URL 상태와 로컬 상태 선택: [catalog/patterns/list-state-selection.md](catalog/patterns/list-state-selection.md)
+- 자산 사용 방법: [docs/USING-THE-CATALOG.md](docs/USING-THE-CATALOG.md)
+- 구조와 소유권: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+- Codex adapter: [adapters/codex/README.md](adapters/codex/README.md)
 
 ## 검증
 
 ```bash
-python3 skills/frontend-skill-review/scripts/check_skill_structure.py skills
-for skill in skills/*; do
-  python3 /path/to/skill-creator/scripts/quick_validate.py "$skill"
-done
-npm --prefix skills/frontend-feature-patterns/assets/react-spa-foundation run check
+bash scripts/check-repository.sh
 ```
 
-`/path/to/skill-creator`는 현재 Codex 설치의 `skill-creator` 경로로 바꾼다.
+이 명령은 catalog 예제의 format/type/lint/test/build, Markdown link, adapter 구조와 script syntax를 검사한다. Codex 설치에 포함된 공식 validator가 있으면 `adapters/codex/scripts/check-skills.sh`로 별도 확인할 수 있다.

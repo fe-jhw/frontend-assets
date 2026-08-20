@@ -1,0 +1,4 @@
+interface:
+  display_name: "URL List State"
+  short_description: "공유·복원 가능한 URL 목록 상태와 페이지네이션 구현"
+  default_prompt: "Use $url-list-state to implement canonical URL-owned list state and its history behavior."

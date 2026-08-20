@@ -1,0 +1,4 @@
+interface:
+  display_name: "Local Pagination"
+  short_description: "모달·탭용 로컬 페이지네이션 상태 구현"
+  default_prompt: "Use $local-pagination to implement transient component-owned pagination without URL state."

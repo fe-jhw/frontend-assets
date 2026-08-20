@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auth Client"
+  short_description: "토큰 저장·401 refresh·세션 race 경계 구현"
+  default_prompt: "Use $auth-client to implement or diagnose token refresh and session concurrency boundaries."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Draft Lifecycle"
+  short_description: "RHF reset·dirty draft·이탈 보호 흐름 구현"
+  default_prompt: "Use $draft-lifecycle to implement safe async form resets and dirty-draft navigation guards."

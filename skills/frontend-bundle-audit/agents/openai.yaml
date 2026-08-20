@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Bundle Audit"
+  short_description: "Vite production bundle과 chunk 구성을 요청 시 진단"
+  default_prompt: "Use $frontend-bundle-audit to inspect this Vite production bundle and identify actionable size or chunking issues."

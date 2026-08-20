@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Skill Review"
+  short_description: "프로젝트 Codex 스킬과 하네스 품질을 평가·개선"
+  default_prompt: "Use $frontend-skill-review to audit and improve the Codex skills and harness in this project."

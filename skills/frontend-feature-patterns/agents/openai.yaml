@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Feature Patterns"
+  short_description: "URL 목록·query·auth·form·UI 상태 패턴을 선별 구현"
+  default_prompt: "Use $frontend-feature-patterns to implement the relevant reusable frontend workflow without adding unrelated abstractions."

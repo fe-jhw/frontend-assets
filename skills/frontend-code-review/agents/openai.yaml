@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Code Review"
+  short_description: "React 프론트엔드 결함과 구조 품질을 독립 리뷰"
+  default_prompt: "Use $frontend-code-review to review this frontend scope for defects, regressions, boundaries, and missing tests."

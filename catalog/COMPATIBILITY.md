@@ -11,6 +11,7 @@
 | Zod | 4 |
 | Vite | 8 |
 | Vitest | 4 |
+| Playwright | 1 |
 | ESLint | 10 |
 | TypeScript | 6 |
 
